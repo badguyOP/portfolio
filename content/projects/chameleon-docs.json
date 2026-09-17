@@ -1,0 +1,9 @@
+{
+  "order": 3,
+  "title": "Chameleon Docs",
+  "subtitle": "AI parsing for Project/Service documents",
+  "description": "A high-speed document intelligence tool that converts unstructured files into clean data, optimized to reduce latency by switching from standard APIs to efficient, local-first parsing runtimes.",
+  "image": "/uploads/chameleon-docs.jpg",
+  "sc": "https://github.com/AtharvRG/chameleon-docs",
+  "live": "https://chameleon-anchor.vercel.app"
+}

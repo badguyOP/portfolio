@@ -1,0 +1,8 @@
+{
+  "order": 4,
+  "title": "ASAP Protocol",
+  "subtitle": "Discovery layer for the agent economy",
+  "description": "A decentralized protocol that solves the \"cold start\" problem for AI agents, enabling on-chain service discovery and a novel x402 micro-payment handshake for autonomous machine-to-machine access.",
+  "image": "/uploads/asap.jpg",
+  "sc": "https://github.com/AtharvRG/asap-protocol"
+}

@@ -1,0 +1,112 @@
+# Decap CMS config — https://decapcms.org/docs/configuration-options/
+#
+# Backend: Netlify's Identity + Git Gateway. Every publish here is a commit
+# to this repo, pushed straight to `branch` below, which triggers a normal
+# Netlify rebuild — same as if you'd edited the files yourself and pushed.
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images/files land in the repo, and the public URL prefix
+# the site uses to serve them.
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    summary: "{{title}}"
+    sortable_fields: ["order", "title"]
+    fields:
+      - label: "Order (lower shows first)"
+        name: "order"
+        widget: "number"
+        default: 99
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Screenshot", name: "image", widget: "image" }
+      - { label: "Source Code Link", name: "sc", widget: "string" }
+      - label: "Live Demo Link (optional)"
+        name: "live"
+        widget: "string"
+        required: false
+
+  - name: "research"
+    label: "Research & Analysis"
+    label_singular: "Report"
+    folder: "content/research"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    summary: "{{title}} — {{type}}"
+    sortable_fields: ["date", "title", "type"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - "Sell-Side Equity"
+          - "Venture"
+          - "Currency / FX"
+          - "Financial Model"
+      - { label: "Coverage (ticker, sector, or company)", name: "coverage", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Cover image (optional)"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Shown in the pop-up. Leave blank for a plain placeholder."
+      - label: "Attachments"
+        name: "attachments"
+        widget: "list"
+        summary: "{{fields.label}} ({{fields.fileType}})"
+        hint: "Add one entry per file — a PDF report, an Excel model, a link, as many as this report needs."
+        fields:
+          - { label: "Label", name: "label", widget: "string", hint: "e.g. \"Full Report\" or \"Financial Model\"" }
+          - label: "File Type"
+            name: "fileType"
+            widget: "select"
+            options: ["PDF", "Excel", "Link"]
+            hint: "Controls which buttons show (View/Download) and how Excel is previewed."
+          - label: "Upload the file (PDF/Excel)"
+            name: "file"
+            widget: "file"
+            required: false
+            hint: "Use this OR the link below, not both."
+          - label: "External link (if not uploading a file)"
+            name: "externalLink"
+            widget: "string"
+            required: false
+
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt (shown in the list view)", name: "excerpt", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Read Time", name: "readTime", widget: "string", default: "5 min read" }
+      - { label: "Tag", name: "tag", widget: "string" }
+      - label: "Cover image (optional)"
+        name: "cover"
+        widget: "image"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Write here — use the image button in the toolbar to drop images in wherever you want."

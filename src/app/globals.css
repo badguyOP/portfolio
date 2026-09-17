@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --foreground: #f5f5f5;
+  --accent: #f35a0d; /* Matching the orange from your WebGL */
+  --blog-background: #0b0f19; /* deep navy/charcoal, distinct from the site's near-black */
+  --research-background: #14120f; /* warm charcoal, distinct from both the site's near-black and Blog's navy */
+}
+
+/* Keeps the scroll fade (mask-image) as the only visual cue for the
+   scrollable project list — no visible scrollbar track/thumb. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent selection:text-white;
+    /* Hide default scrollbar for Lenis */
+    overflow-x: hidden;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Performance: let the browser skip rendering/layout for off-screen sections.
+   This is a big win on long pages in Firefox, which is slower at compositing
+   the mix-blend-difference layers. `contain-intrinsic-size` keeps the
+   scrollbar stable so the page height doesn't jump as sections render. */
+main > div > section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100vh;
+}
+
+/* Respect reduced-motion: disable the heaviest animations entirely. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
