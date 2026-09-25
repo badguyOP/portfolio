@@ -1,9 +1,0 @@
-{
-  "order": 2,
-  "title": "Nudge",
-  "subtitle": "Private Solana payments via Blinks",
-  "description": "A payment link app that uses ZK proofs and stealth addresses to let users accept SOL publicly while keeping their main wallet address completely private and unlinkable.",
-  "image": "/uploads/nudge.jpg",
-  "sc": "https://github.com/AtharvRG/nudge",
-  "live": "https://nudge-ph.vercel.app"
-}
