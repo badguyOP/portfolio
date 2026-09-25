@@ -1,9 +1,0 @@
-{
-  "order": 5,
-  "title": "GlassBox",
-  "subtitle": "X-Ray vision for LLM pipelines",
-  "description": "An observability SDK that captures the \"why\" behind non-deterministic AI decisions, allowing developers to inspect the reasoning and filtering steps that led to a specific output.",
-  "image": "/uploads/glassbox.jpg",
-  "sc": "https://github.com/AtharvRG/glassbox",
-  "live": "https://glassbox-eq.vercel.app"
-}
