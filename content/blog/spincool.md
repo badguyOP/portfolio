@@ -1,5 +1,5 @@
 ---
-title: "SpinCool:"
+title: SpinCool
 excerpt: How a sealed refrigerant loop, a spinning motor, and one bold idea
   could change how India drinks cold.
 date: 2026-09-27
