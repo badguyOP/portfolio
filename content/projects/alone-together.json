@@ -1,0 +1,9 @@
+{
+  "order": 1,
+  "title": "Alone, Together",
+  "sc": "https://github.com/badguyOP/p2p_game",
+  "live": "https://joyful-lokum-82a51e.netlify.app",
+  "description": "A team prioritization game about how people actually make decisions. Everyone reads a real crisis briefing — a boardroom emergency, a survival scenario, a mystery — and ranks the priorities alone, silently. Then the team debates and re-ranks together. At the end, everyone sees how their choices compared to an expert answer, and whether the group's discussion actually made things better, or just amplified the loudest voice in the room.\nCover image — built to match the visual language already running through the app (same ink/amber palette, the same \"stamp\" motif used on the reveal and ending screens, and a quiet nod to the five scoring dimensions along the bottom), not a stock photo:\nI generated it directly rather than pulling something from a search, since a real product cover shouldn't be someone else's photo. Want a version cropped for a specific use (app icon, social share card, a vertical poster), or a different title if \"Alone, Together\" doesn't land?",
+  "image": "/uploads/1000060326.png",
+  "subtitle": "Rank alone. Rank as a team. See who was right."
+}
